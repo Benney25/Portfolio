@@ -14,7 +14,7 @@
 @media (prefers-color-scheme: dark) {
   * {
     --textcolor: #dadada;
-    --bgcolor: #141414;
+    --bgcolor: #000000f9;
     --highlight: #ffc400;
   }
 }
@@ -32,6 +32,11 @@ body {
   /* centers the layout */
 }
 
+/* DevNote: build css animation 
+(that works seamlessly between sections and body?) 
+(for body?) 
+(for sections?) */
+
 /* ------- Sections ------- */
 
 section {
@@ -43,6 +48,7 @@ section {
   min-height: 100vh;
   width: 100%;
   background: var(--bgcolor);
+  /* background-image: url('./index_files/tumblr_myopxy8uJI1qz4vi0o1_1280.jpg'); */
 }
 
 section:target {
