@@ -217,6 +217,26 @@ textarea {
   box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .2), inset -1px -1px 0 rgba(0, 0, 0, .04);
 }
 
+
+/* .cropcorners {
+  border-radius: 0px;
+  background:
+    radial-gradient(circle at top left, transparent 35px, #ddd 0),
+    linear-gradient(-135deg, transparent 35px, #ddd 0) top right,
+    radial-gradient(circle at bottom right, transparent 35px, #ddd 0) bottom right,
+    linear-gradient(45deg, transparent 35px, #ddd 0) bottom left;
+
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+} */
+
+.fpim {
+  /* https://bennettfeely.com/clippy/ */
+  -webkit-clip-path: polygon(25% 0%, 90% 0%, 75% 85%, 0 85%);
+  clip-path: polygon(25% 0%, 90% 0%, 75% 75%, 5% 75%);
+
+}
+
 /* Inline footnotes */
 
 label {
