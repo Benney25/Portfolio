@@ -396,9 +396,13 @@ article time {
 .grid a img {
   position: absolute;
   top: 0;
-  width: 100%;
-  height: 100%;
+  width: 92%;
+  height: 92%;
   object-fit: contain;
+}
+
+.grid a p {
+  text-align: center;
 }
 
 /* ------- Slideshow ------- */
