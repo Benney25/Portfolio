@@ -78,9 +78,9 @@ https://zyro.com/blog/portfolio-website-examples/
     <section id="home">
       <!-- HOME -->
       <!-- https://youtube.com/shorts/bRV7dQW9ZWE?feature=share -->
-      <div style="columns: 2">
-        <div style="padding: 0.5em"><img class="fpim" loading="lazy" alt="" src="./index_files/mainIMG.jpg"></div>
-        <div style="padding: 0.5em">
+      <div class="flexhome">
+        <div><img class="fpim" loading="lazy" alt="" src="./index_files/mainIMG.jpg"></div>
+        <div>
 
           <p>
             My name is Benjamin Glick.</p>
@@ -97,7 +97,7 @@ https://zyro.com/blog/portfolio-website-examples/
           <p><br />
 
           </p>
-          <p>Any well-rounded IT education requires a marriage between knowledge in
+          <p>Any well-rounded IT education requires knowledge of both
             programming and infrastructure, so I make plenty of time to learn
             programming as well. These are a few languages I&rsquo;m learning or
             actively developing in. Shell Scripting: <b>Powershell</b>, <b>Zsh</b>.
@@ -112,7 +112,9 @@ https://zyro.com/blog/portfolio-website-examples/
             TryHackMe, or HackTheBox, go for hikes, or read.
           </p>
 
-
+          <p></p>
+        </div>
+      </div>
     </section>
 
 
@@ -238,6 +240,23 @@ https://zyro.com/blog/portfolio-website-examples/
 
     <section id="blog">
       <!-- NEWS -->
+
+      <article>
+        <h2> <a href="">Getting the most out of your technology</a> <time datetime="2022-10-20">11.10.2022</time></h2>
+        <p> I have always been a huge fan of finding ways to make my work easier, more efficient, even faster. In
+          pursuit of being faster, I've discovered a few things that I wish I knew when I was in college. A few of these
+          things include Window-Snapping, Virtual Desktops, Keyboard Shortcuts for everything from traversing and
+          editing text, to simple scripts that saved me tons of time and effort. Follow me to the fast lane!
+        </p>
+      </article>
+
+      <article>
+        <h2> <a href="">Organizing for the future</a> <time datetime="2022-10-20">11.10.2022</time></h2>
+        <p> Organization is essential for a successful session, whatever that session is. Staying organized reduces the
+          amount of mental effort required to complete tasks, task friction, helps prevent procrastination, and supports
+          creativity by letting your mind focus on dreaming, instead of finding your tools.
+        </p>
+      </article>
 
       <article>
         <h2> More content coming soon <time datetime="2022-10-20">10.20.2022</time></h2>
@@ -505,8 +524,24 @@ https://zyro.com/blog/portfolio-website-examples/
     </section>
 
     <section id="ccnalabs">
-      <p>This page is under construction - Please check back later. It will look a lot cooler when you get back! <br />
+      <h2>CCNA Lab Reports</h2>
+      <p>If you'd like to get an idea of what I'm learning, this is a good
+        place to start.
       </p>
+      <br />
+
+      <h3>Jeremy's IT Lab</h3>
+
+      <br />
+      <br />
+      <article>
+        <h2> <a href="#jitld24">Jeremy's IT Lab - Day 24, Floating Static Routes</a> <time
+            datetime="2022-11-11">11.11.2022</time></h2>
+        <p> This lab deals with Static Routing, Floating Static Routes, Administrative Distance Values, Routing Tables,
+          and some troubleshooting.
+        </p>
+      </article>
+
     </section>
 
     <section id="scripting">
@@ -519,6 +554,286 @@ https://zyro.com/blog/portfolio-website-examples/
       </p>
     </section>
 
+    <section id="jitld24">
+      <p>Jeremy&rsquo;s
+        IT Lab Day 24 Lab &ndash; Floating Static Routes</p>
+      <p><br />
+
+      </p>
+      <p><img src="./img/JITL%20Day%2024%20-%20Floating%20Static%20Routes_html_6f30a66b78812927.png" />
+      </p>
+      <p><br />
+
+      </p>
+      <p><u><b>1. Check the
+            routing tables of R1 and R2. </b></u>
+      </p>
+      <ol type="a">
+        <li>
+          <p>Which dynamic routing protocol is
+            Enterprise A using?</p>
+      </ol>
+      <p>``</p>
+      <p>Code translations:
+        O = OSPF, S = Static, * = Candidate Default</p>
+      <p>0.0.0.0/0 via
+        x.x.x.x = default gateway</p>
+      <p><br />
+
+      </p>
+      <p>R1#<b>show ip
+          route</b></p>
+      <p>O 10.0.2.0/24
+        [110/2] via 10.0.0.2</p>
+      <p>S* 0.0.0.0/0 [1/0]
+        via 203.0.113.9</p>
+      <p><br />
+
+      </p>
+      <p>R2#<b>show ip
+          route</b></p>
+      <p>O 10.0.1.0/24
+        [110/2] via 10.0.0.1</p>
+      <p>S* 0.0.0.0/0 [1/0]
+        via 203.0.113.13</p>
+      <p>``</p>
+      <p><br />
+
+      </p>
+      <p>This means that
+        Enterprise A is using OSPF Internally, and Static Routing to set
+        their default gateway.
+      </p>
+      <p><br />
+
+      </p>
+      <ol type="a" start="2">
+        <li>
+          <p>Which route will be used if PC1
+            tries to access SRV1?</p>
+      </ol>
+      <p>PC1 10.0.1.1/24, to R1 10.0.1.254/24
+        G0/1</p>
+      <p>R1 10.0.0.1/30 G0/2/0 to R2 10.0.0.2
+        G0/2/0</p>
+      <p>R2 10.0.2.254/24 G0/1 to SRV1
+        10.0.2.1/24</p>
+      <p><br />
+
+      </p>
+      <ol type="a" start="3">
+        <li>
+          <p>Which route will be used if PC1
+            tries to access remote server 1.1.1.1 over the Internet?</p>
+      </ol>
+      <p>203.0.113.9</p>
+      <p><br />
+
+      </p>
+      <ol type="a" start="4">
+        <li>
+          <p>Test by pinging SRV1 and 1.1.1.1</p>
+      </ol>
+      <p>The pings work, but ping does not
+        supply enough information about which route was actually used.</p>
+      <p>Instead, I used tracert to confirm the
+        route used to reach each destination.</p>
+      <p><br />
+
+      </p>
+      <p>```</p>
+      <p>Information on tracert</p>
+      <ol>
+        <li>
+          <p><a
+              href="https://www.ibm.com/docs/en/aix/7.2?topic=t-traceroute-command">https://www.ibm.com/docs/en/aix/7.2?topic=t-traceroute-command</a>
+          </p>
+        <li>
+          <p><a
+              href="https://www.cloudns.net/blog/traceroute-command-tracert/">https://www.cloudns.net/blog/traceroute-command-tracert/</a>
+          </p>
+      </ol>
+      <p>```</p>
+      <p><br />
+
+      </p>
+      <p>From PC1:</p>
+      <p>```</p>
+      <p>C:\&gt;tracert 1.1.1.1</p>
+      <p>10.0.1.254 to 1.1.1.1</p>
+      <p>C:\&gt;tracert to 10.0.2.1</p>
+      <p>10.0.1.254 to 10.0.0.2 to 10.0.2.1</p>
+      <p>```</p>
+      <p><br />
+
+      </p>
+      <p>The tracert to 1.1.1.1 confused me,
+        because the next hop out of R1 should be to interface 203.0.113.9 on
+        ISPBR1, but instead the packet went straight to 1.1.1.1. Running <b>show
+          ip route</b> and <b>show
+          running-config</b> on ISPBR1
+        revealed these two addresses:</p>
+      <p><br />
+
+      </p>
+      <p>```</p>
+      <p>Interface
+        Loopback0</p>
+      <p>1.1.1.1
+        255.255.255.255</p>
+      <p>Interface
+        Loopback1</p>
+      <p>2.2.2.2
+        255.255.255.255</p>
+      <p>```</p>
+      <p><br />
+
+      </p>
+      <p>I&rsquo;m sure the loopback was
+        implemented to simplify the lab setup, but I want to know more.
+        Primarily, how and why to set up a loopback interface in the wild.
+      </p>
+      <p><br />
+
+      </p>
+      <p>```</p>
+      <p>loopback information cisco router</p>
+      <ol>
+        <li>
+          <p><a
+              href="https://www.flackbox.com/cisco-loopback-interfaces">https://www.flackbox.com/cisco-loopback-interfaces</a>
+          </p>
+        <li>
+          <p><a
+              href="https://www.omnisecu.com/cisco-certified-network-associate-ccna/what-is-loopback-interface-in-a-router.php">https://www.omnisecu.com/cisco-certified-network-associate-ccna/what-is-loopback-interface-in-a-router.php</a>
+          </p>
+      </ol>
+      <p>
+        ```</p>
+      <p>
+        <br />
+
+      </p>
+      <p><u><b>2. Configure floating static
+            routes on R1 and R2 that</b></u></p>
+      <ol type="a">
+        <li>
+          <p>allow PC1 to reach SRV1 if the
+            link between R1 and R2 fails.</p>
+      </ol>
+      <p><br />
+
+      </p>
+      <p>```</p>
+      <p>R1(config)#<b>int </b><i>g0/0/0</i></p>
+      <p>R1(config-if)#<b>ip
+          ospf cost </b><i>115</i></p>
+      <p>R1(config-if)#<i>do
+        </i><b>show ip route</b></p>
+      <p>```</p>
+      <p><br />
+
+      </p>
+      <p>```</p>
+      <p>R2(config)#<b>int </b><i>g0/0/0</i></p>
+      <p>R2(config-if)#<b>ip
+          ospf cost </b><i>115</i></p>
+      <p>
+        <i>ex2x</i>
+      </p>
+      <p>
+        R2# <b>show ip route</b></p>
+      <p>```</p>
+      <p><br />
+
+      </p>
+      <ol type="a" start="2">
+        <li>
+          <p>Do the routes enter the routing
+            tables of R1 and R2?</p>
+      </ol>
+      <p>The [AD/Metric] are not showing up for
+        <b>show ip route</b>?
+      </p>
+      <p>Is this perhaps partly due to still
+        working?</p>
+      <p><br />
+
+      </p>
+      <p><br />
+
+      </p>
+      <p><u><b>3. Shut down the G0/2/0 interface
+            of R1 or R2.</b></u></p>
+      <ol type="a">
+        <li>
+          <p>Do the floating static routes
+            enter the routing tables of R1 and R2?</p>
+      </ol>
+      <p>No?</p>
+      <p><br />
+
+      </p>
+      <ol type="a" start="2">
+        <li>
+          <p>Ping from PC1 to SRV1 to confirm.</p>
+      </ol>
+      <p><img src="./img/JITL%20Day%2024%20-%20Floating%20Static%20Routes_html_85aa1fa805161395.png" />
+      </p>
+      <p>Is this due to ARP? STP Convergence?</p>
+      <p>LOOOOL!<br />
+        I know what happened.<br />
+        I shut down G0/0/0 on R2
+        instead of G0/2/0<br />
+        <br />
+        <br />
+
+      </p>
+      <p>no shutdown G0/0/0 and shutdown G0/2/0<br />
+        23:13:16:
+        %OSPF-5-ADJCHG: Process 1, Nbr 203.0.113.10 on GigabitEthernet0/2/0
+        from FULL to DOWN, Neighbor Down: Interface down or detached</p>
+      <p>C:\&gt;ping 10.0.2.1<br />
+        Pinging 10.0.2.1 with 32 bytes of
+        data:<br />
+        Request timed out.<br />
+        Request timed out.<br />
+        Request
+        timed out.<br />
+        Request timed out.<br />
+        Ping statistics for
+        10.0.2.1:<br />
+        Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),</p>
+      <p>????????</p>
+      <p>Is the reason it wasn&rsquo;t working was because I didn&rsquo;t
+        configure the router, I configured the interface? If the command
+        isn&rsquo;t going to do anything when in con-if mode, why didn&rsquo;t
+        it return an error?
+      </p>
+      <p><u>Answer from lab walkthrough</u>:</p>
+      <p>```</p>
+      <p>R1(config)#<b>ip route </b><i>10.0.2.0 255.255.255.0 203.0.113.1
+          111</i></p>
+      <p>```</p>
+      <p>After executing this command, the route appears in the routing
+        table for R1. Statically configuring the route from SRV1 to PC1 on R2
+        with the same process has similar results. Note that during this time
+        the original route has remained down.</p>
+      <p><img src="./img/JITL%20Day%2024%20-%20Floating%20Static%20Routes_html_4aaaaecc29aa402d.png" />
+      </p>
+      <p>A ping from PC1 to SRV1 fails &frac34; times due to ARP
+        Resolution, but final packet succeeds. With 3 Routers in transit to
+        SRV1, each of 3 successive pings were dropped as the ARP Resolution
+        process was started.
+      </p>
+      <p>Key takeaways:
+      </p>
+      <p>Do not enter interface-configuration mode to configure floating
+        static routes</p>
+      <p>A <i>floating static route</i> is a <i>static route</i>. You have
+        to configure it as a static route or it will not work.
+      </p>
+    </section>
   </main>
 
   <!-- ----------
