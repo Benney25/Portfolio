@@ -242,7 +242,8 @@ https://zyro.com/blog/portfolio-website-examples/
       <!-- NEWS -->
 
       <article>
-        <h2> <a href="">Getting the most out of your technology</a> <time datetime="2022-10-20">11.10.2022</time></h2>
+        <h2> <a href="#20221110b">Getting the most out of your technology</a> <time
+            datetime="2022-11-10">11.10.2022</time></h2>
         <p> I have always been a huge fan of finding ways to make my work easier, more efficient, even faster. In
           pursuit of being faster, I've discovered a few things that I wish I knew when I was in college. A few of these
           things include Window-Snapping, Virtual Desktops, Keyboard Shortcuts for everything from traversing and
@@ -251,7 +252,7 @@ https://zyro.com/blog/portfolio-website-examples/
       </article>
 
       <article>
-        <h2> <a href="">Organizing for the future</a> <time datetime="2022-10-20">11.10.2022</time></h2>
+        <h2> <a href="#221110a">Organizing for the future</a> <time datetime="2022-11-10">11.10.2022</time></h2>
         <p> Organization is essential for a successful session, whatever that session is. Staying organized reduces the
           amount of mental effort required to complete tasks, task friction, helps prevent procrastination, and supports
           creativity by letting your mind focus on dreaming, instead of finding your tools.
@@ -554,6 +555,14 @@ https://zyro.com/blog/portfolio-website-examples/
       </p>
     </section>
 
+    <section id="20221110a">
+
+    </section>
+
+    <section id="20221110b">
+
+    </section>
+
     <section id="jitld24">
       <p>Jeremy&rsquo;s
         IT Lab Day 24 Lab &ndash; Floating Static Routes</p>
@@ -573,33 +582,33 @@ https://zyro.com/blog/portfolio-website-examples/
           <p>Which dynamic routing protocol is
             Enterprise A using?</p>
       </ol>
-      <p>``</p>
+      <br />
       <p>Code translations:
         O = OSPF, S = Static, * = Candidate Default</p>
       <p>0.0.0.0/0 via
         x.x.x.x = default gateway</p>
       <p><br />
+      <blockquote><em>
+          </p>
+          <p>R1#<b>show ip
+              route</b></p>
+          <p>O 10.0.2.0/24
+            [110/2] via 10.0.0.2</p>
+          <p>S* 0.0.0.0/0 [1/0]
+            via 203.0.113.9</p>
+          <p><br />
 
-      </p>
-      <p>R1#<b>show ip
-          route</b></p>
-      <p>O 10.0.2.0/24
-        [110/2] via 10.0.0.2</p>
-      <p>S* 0.0.0.0/0 [1/0]
-        via 203.0.113.9</p>
-      <p><br />
+          </p>
+          <p>R2#<b>show ip
+              route</b></p>
+          <p>O 10.0.1.0/24
+            [110/2] via 10.0.0.1</p>
+          <p>S* 0.0.0.0/0 [1/0]
+            via 203.0.113.13</p>
+        </em></blockquote>
+      <br />
 
-      </p>
-      <p>R2#<b>show ip
-          route</b></p>
-      <p>O 10.0.1.0/24
-        [110/2] via 10.0.0.1</p>
-      <p>S* 0.0.0.0/0 [1/0]
-        via 203.0.113.13</p>
-      <p>``</p>
-      <p><br />
 
-      </p>
       <p>This means that
         Enterprise A is using OSPF Internally, and Static Routing to set
         their default gateway.
@@ -658,15 +667,15 @@ https://zyro.com/blog/portfolio-website-examples/
 
       </p>
       <p>From PC1:</p>
-      <p>```</p>
-      <p>C:\&gt;tracert 1.1.1.1</p>
-      <p>10.0.1.254 to 1.1.1.1</p>
-      <p>C:\&gt;tracert to 10.0.2.1</p>
-      <p>10.0.1.254 to 10.0.0.2 to 10.0.2.1</p>
-      <p>```</p>
-      <p><br />
+      <blockquote><em>
+          <p>C:\&gt;tracert 1.1.1.1</p>
+          <p>10.0.1.254 to 1.1.1.1</p>
+          <p>C:\&gt;tracert to 10.0.2.1</p>
+          <p>10.0.1.254 to 10.0.0.2 to 10.0.2.1</p>
+        </em></blockquote>
+      <br />
 
-      </p>
+
       <p>The tracert to 1.1.1.1 confused me,
         because the next hop out of R1 should be to interface 203.0.113.9 on
         ISPBR1, but instead the packet went straight to 1.1.1.1. Running <b>show
@@ -676,19 +685,18 @@ https://zyro.com/blog/portfolio-website-examples/
       <p><br />
 
       </p>
-      <p>```</p>
-      <p>Interface
-        Loopback0</p>
-      <p>1.1.1.1
-        255.255.255.255</p>
-      <p>Interface
-        Loopback1</p>
-      <p>2.2.2.2
-        255.255.255.255</p>
-      <p>```</p>
-      <p><br />
-
-      </p>
+      <blockquote><em>
+          <p>Interface
+            Loopback0</p>
+          <p>1.1.1.1
+            255.255.255.255</p>
+          <p>Interface
+            Loopback1</p>
+          <p>2.2.2.2
+            255.255.255.255</p>
+        </em>
+      </blockquote>
+      <br />
       <p>I&rsquo;m sure the loopback was
         implemented to simplify the lab setup, but I want to know more.
         Primarily, how and why to set up a loopback interface in the wild.
@@ -724,29 +732,29 @@ https://zyro.com/blog/portfolio-website-examples/
       <p><br />
 
       </p>
-      <p>```</p>
-      <p>R1(config)#<b>int </b><i>g0/0/0</i></p>
-      <p>R1(config-if)#<b>ip
-          ospf cost </b><i>115</i></p>
-      <p>R1(config-if)#<i>do
-        </i><b>show ip route</b></p>
-      <p>```</p>
-      <p><br />
+      <blockquote><em>
+          <p>R1(config)#<b>int </b><i>g0/0/0</i></p>
+          <p>R1(config-if)#<b>ip
+              ospf cost </b><i>115</i></p>
+          <p>R1(config-if)#<i>do
+            </i><b>show ip route</b></p>
+        </em></blockquote>
+      <br />
 
-      </p>
-      <p>```</p>
-      <p>R2(config)#<b>int </b><i>g0/0/0</i></p>
-      <p>R2(config-if)#<b>ip
-          ospf cost </b><i>115</i></p>
-      <p>
-        <i>ex2x</i>
-      </p>
-      <p>
-        R2# <b>show ip route</b></p>
-      <p>```</p>
-      <p><br />
 
-      </p>
+      <blockquote><em>
+          <p>R2(config)#<b>int </b><i>g0/0/0</i></p>
+          <p>R2(config-if)#<b>ip
+              ospf cost </b><i>115</i></p>
+          <p>
+            <i>ex2x</i>
+          </p>
+          <p>
+            R2# <b>show ip route</b></p>
+        </em></blockquote>
+      <br />
+
+
       <ol type="a" start="2">
         <li>
           <p>Do the routes enter the routing
@@ -811,10 +819,10 @@ https://zyro.com/blog/portfolio-website-examples/
         it return an error?
       </p>
       <p><u>Answer from lab walkthrough</u>:</p>
-      <p>```</p>
-      <p>R1(config)#<b>ip route </b><i>10.0.2.0 255.255.255.0 203.0.113.1
-          111</i></p>
-      <p>```</p>
+      <blockquote><em>
+          <p>R1(config)#<b>ip route </b><i>10.0.2.0 255.255.255.0 203.0.113.1
+              111</i></p>
+        </em></blockquote>
       <p>After executing this command, the route appears in the routing
         table for R1. Statically configuring the route from SRV1 to PC1 on R2
         with the same process has similar results. Note that during this time
