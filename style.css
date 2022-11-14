@@ -228,6 +228,11 @@ textarea {
 
 .flexhome {
   display: flex;
+  flex-wrap: wrap;
+}
+
+.flexhome>div {
+  width: 450px;
 }
 
 /* Inline footnotes */

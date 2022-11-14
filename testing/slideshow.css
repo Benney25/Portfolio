@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* outline: 1px dotted salmon; */
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font: 100%/1.375 AvenirNext-Regular, "Lucida Grande", "Lucida Unicode", Corbel, Tahoma, Verdana, Helvetica, sans-serif;
+    min-height: 100%;
+}
+
+.wrapper {
+    max-width: 50em;
+    margin: 1em auto 2em;
+    overflow: auto;
+    min-height: 100%;
+}
+
+.slider-wrap {
+    min-height: 280px;
+    overflow: auto;
+    position: relative;
+    /* make room for prev/next arrows */
+    padding: 0 2em;
+}
+
+.cycle-slideshow--slide h2 {
+    font-family: AvenirNextCondensed-Medium, "Lucida Grande", Corbel, Tahoma, Verdana, Helvetica, sans-serif;
+    font-weight: normal;
+}
+
+.cycle-slideshow span {
+    display: inline;
+    overflow: hidden;
+    margin: 10px auto;
+    line-height: 18px;
+}
+
+.cycle-slideshow--slide h2 {
+    clear: none;
+    font-size: 1.25em;
+    font-weight: normal;
+    font-style: normal;
+    color: #445ed5;
+    margin: 0 0 5px 0;
+}
+
+.cycle-slideshow--slide h2 a {
+    color: #445ed5;
+    font-style: normal;
+    text-decoration: none;
+}
+
+.cycle-slideshow--slide span {
+    font-weight: normal;
+    font-style: normal;
+    color: #333;
+}
+
+.cycle-slideshow_image {
+    float: left;
+    margin: 0 10px 0 0px;
+    max-height: 180px;
+    border: none;
+}
+
+/* .cycle-slideshow, .cycle-slideshow * { */
+/* -webkit-box-sizing: border-box; */
+/* -moz-box-sizing: border-box; */
+/* box-sizing: border-box; */
+/* } */
+.cycle-slideshow {
+    min-width: 270px;
+    margin: auto;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cycle-slideshow>div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+}
+
+.cycle-slide p {
+    padding: .5em 0;
+}
+
+.cycle-slide .read-more a {
+    text-decoration: underline;
+    float: right;
+    color: #445ed5;
+    font-size: .875em;
+}
+
+.cycle-slide .read-more a:hover {
+    text-decoration: none;
+}
+
+/* pager */
+.cycle-pager {
+    margin: 0.25em auto .25em .5em;
+}
+
+.cycle-pager a {
+    padding: .25em .5em;
+    margin: .125em;
+    border: 1px solid #ccc;
+    text-align: center;
+    text-decoration: none;
+    font-weight: normal;
+    color: #d92644;
+    display: inline-block;
+    width: 1em;
+}
+
+.cycle-pager .cycle-pager-active,
+.cycle-pager a:hover {
+    font-weight: bold;
+    background-color: #f7d4da;
+    border-color: #aaa;
+    font-family: AvenirNextCondensed-Demibold, "Lucida Grande", Corbel, Tahoma, Verdana, Helvetica, sans-serif;
+}
+
+.cycle-pager .cycle-pager-active {
+    box-shadow: 1px 1px 2px hsla(0, 0%, 0%, 0.7);
+}
+
+.cycle-pager a:focus {
+    outline: none;
+}
+
+.cycle-pager>* {
+    cursor: pointer;
+}
+
+/* prev / next links */
+.cycle-arrows {
+    position: absolute;
+    top: 0;
+    width: 1em;
+    height: 100%;
+    padding-top: 2em;
+    cursor: pointer;
+    font-size: 2em;
+    color: #333;
+    z-index: 8;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.cycle-prev {
+    left: 0;
+}
+
+.cycle-next {
+    right: 0;
+}
+
+.cycle-arrows::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: .5em solid transparent;
+    border-bottom: .5em solid transparent;
+}
+
+.cycle-prev::after {
+    border-right: .5em solid #333;
+    left: 0;
+}
+
+.cycle-next::after {
+    border-left: .5em solid #333;
+    right: 0;
+}
+
+.cycle-arrows:hover {
+    background-color: #f7f7f7;
+    /* outline: 1px dotted #666; */
+}
+
+.cycle-prev::after:hover {
+    border-left-color: #000;
+}
+
+.cycle-next::after:hover {
+    border-right-color: #000;
+}
+
+@media (max-width: 570px) {
+    .cycle-slideshow h2 a {
+        display: block;
+        clear: left;
+        padding-top: .5em;
+    }
+
+}
+
+/* ===== general  ===== */
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+footer small {
+    display: block;
+    text-align: center;
+}
+
+footer a {
+    display: inline-block;
+    padding: 1em 0;
+}
